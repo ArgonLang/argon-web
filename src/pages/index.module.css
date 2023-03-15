@@ -8,6 +8,9 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  flex-direction: column;
+  align-items: inherit;
+  padding-bottom: 0%;
 }
 
 @media screen and (max-width: 996px) {
@@ -16,8 +19,22 @@
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.buttonRelease {
+  background-color: #ebcb8b;
+  color: black;
+}
+
+.buttonRelease:hover {
+  filter: brightness(0.9);
+  color: initial;
+}
+
+.buttonSource {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.buttonSource:hover {
+  filter: brightness(0.9);
+  color: initial;
 }
