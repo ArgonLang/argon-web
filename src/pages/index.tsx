@@ -4,11 +4,16 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import {useColorMode} from '@docusaurus/theme-common';
+
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const {colorMode} = useColorMode();
+
+  const Svg = require('@site/static/img/waves.svg').default
+  
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)} style={{flexDirection:"column", alignItems:"inherit", paddingBottom: 0}}>
       <div className="container">
@@ -37,12 +42,7 @@ function HomepageHeader() {
         </div>
       </div>
       <div style={{display: "flex", flexDirection: "column"}}>
-      <img src="/img/waves.svg" style={{width: "100%"}}/>
-        <div style={{background:"#40495a"}}>
-          <code style={{border: "none",   backgroundColor:"transparent"}}>
-            import io
-          </code>
-        </div>
+        <Svg style={{height: "200px"}} fill={colorMode === "dark" ? "var(--ifm-background-color)" : "currentColor"}/>
       </div>
     </header>
   );
