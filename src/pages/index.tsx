@@ -8,6 +8,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import styles from './index.module.css';
 
 function HomepageHeader() {
+  const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
 
   const Logo = require('@site/static/img/logo.svg').default
@@ -22,7 +23,7 @@ function HomepageHeader() {
               <tbody>
                 <tr style={{ border: "none" }}>
                   <td style={{ border: "none" }}>
-                    <h1>The Argon Language</h1>
+                    <h1>{siteConfig.tagline}</h1>
                     <p style={{ fontSize: "1.1rem" }}>
                       The Argon language is a work-in-progress interpreted multi-paradigm programming language.
                       Its syntax is influenced by many modern languages and aims to be <strong>elegant</strong>, <strong>clean</strong> and <strong>simple to use</strong>.
@@ -40,7 +41,7 @@ function HomepageHeader() {
             </table>
           </div>
           <div className="col">
-            <Logo style={{ height: "350px", width: "350px" }}/>
+            <Logo style={{ height: "350px", width: "350px" }} />
           </div>
         </div>
       </div>
