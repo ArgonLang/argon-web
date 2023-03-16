@@ -28,13 +28,14 @@ function HomepageHeader() {
                       The Argon language is a work-in-progress interpreted multi-paradigm programming language.
                       Its syntax is influenced by many modern languages and aims to be <strong>elegant</strong>, <strong>clean</strong> and <strong>simple to use</strong>.
                     </p>
-                    <a href="https://www.github.com/argonlang/argon/releases" target={"_blank"}>
-                      <button className={clsx('button', styles.buttonRelease)}>Latest release »</button>
-                    </a>
-                    &nbsp;
-                    <a href="https://www.github.com/argonlang/argon/" target={"_blank"}>
-                      <button className={clsx('button', styles.buttonSource)}>Source code</button>
-                    </a>
+                    <div className={styles.buttonContainer}>
+                      <a href="https://www.github.com/argonlang/argon/releases" target={"_blank"}>
+                        <button className={clsx('button', styles.buttonRelease)}>Latest release »</button>
+                      </a>
+                      <a href="https://www.github.com/argonlang/argon/" target={"_blank"}>
+                        <button className={clsx('button', styles.buttonSource)}>Source code</button>
+                      </a>
+                    </div>
                   </td>
                 </tr>
               </tbody>

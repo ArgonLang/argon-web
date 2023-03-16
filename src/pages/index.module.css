@@ -19,6 +19,12 @@
   }
 }
 
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
 .buttonRelease {
   background-color: #ebcb8b;
   color: black;
