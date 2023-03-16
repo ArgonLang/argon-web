@@ -9,7 +9,7 @@ type FeatureItem = {
   description: JSX.Element;
 };
 
-type FeatureSourceItem ={
+type FeatureSourceItem = {
   title: string;
   text: string;
   code: string;
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/anywhere.svg').default,
     description: (
       <>
-        The Argon interpreter is written in C++, does not require any dependencies and supports all major operating systems, 
+        The Argon interpreter is written in C++, does not require any dependencies and supports all major operating systems,
         it is possible to have a working environment wherever it is possible to compile C++ code.
       </>
     ),
@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/concurrent.svg').default,
     description: (
       <>
-        Lightweight concurrency is a key feature of Argon, 
+        Lightweight concurrency is a key feature of Argon,
         the execution of a Argon program is based on lightweight fibers that can be automatically suspended and resumed as needed.
       </>
     ),
@@ -48,18 +48,18 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-const FeatureSourceList : FeatureSourceItem[] = [
+const FeatureSourceList: FeatureSourceItem[] = [
   {
-    title: "Easy to use🌟",
+    title: "Easy to use 🌟",
     text: "Argon is inspired by the most used programming languages in the world, which makes it familiar to more experienced programmers and easy to learn if you are a beginner.",
-    code : `import "io"
+    code: `import "io"
 
 io.print("Hello world!")`
   },
   {
-    title: "Beauty💅",
+    title: "Beauty 💅",
     text: "Code written in Argon is simple to understand and its syntax rewards cleanliness and clarity making it very easy to read.",
-    code : `import "enum"
+    code: `import "enum"
 import "io"
 
 let NOBLE_GAS = ["Helium", "Neon", "Argon", "Krypton", "Xenon"]
@@ -71,10 +71,10 @@ NOBLE_GAS
   |> io.print`
   },
   {
-    title: "Multi paradigm👾",
+    title: "Paradigms 👾",
     text: "Argon supports different programming paradigms, this allows developers to choose the style that best fits the needs of the project.",
-    code : 
-`struct NameCounter {
+    code:
+      `struct NameCounter {
   var name
   var counter
 
@@ -106,10 +106,10 @@ obj_counters |> map((itm) => {
 `
   },
   {
-    title: "Scalable🚀",
-    text: "Thanks to its architecture it is possible to perform a huge amount of tasks simultaneously, your programs can scale and stay lightning fast.",
-    code :
-`import "io"
+    title: "Scalable 🚀",
+    text: "Thanks to its architecture it is possible to run a huge amount of tasks simultaneously, your programs can scale and stay lightning fast.",
+    code:
+      `import "io"
 
 func task(id) {
   spawn () => {
@@ -124,11 +124,11 @@ for var i = 0; i < 100000; i++ {
   }
 ]
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" style={{width: "100%"}}/>
+        <Svg className={styles.featureSvg} role="img" style={{ width: "30%" }} />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
@@ -138,61 +138,32 @@ function Feature({title, Svg, description}: FeatureItem) {
   );
 }
 
-function FeatureSource(a: {idx: number, props: FeatureSourceItem}) {
-  var code_left = (
-  <div className="row"  style={{display:"flex", alignItems:"center"}}>
-    <div className="col">
-      <CodeBlock
-        language="js"
-        showLineNumbers>
-          {a.props.code}
-      </CodeBlock>
+function FeatureSource({ title, text, code }: FeatureSourceItem) {
+  return (
+    <div className={clsx("row", styles.featureWithCode)}  >
+      <div className="col">
+        <CodeBlock
+          language="js"
+          showLineNumbers>
+          {code}
+        </CodeBlock>
+      </div>
+      <div className="col col-4">
+        <table style={{ textAlign: "left" }}>
+          <tbody>
+            <tr style={{ border: "none" }}>
+              <td style={{ border: "none" }}>
+                <h1>{title}</h1>
+                <p style={{ fontSize: "1.2rem" }}>
+                  {text}
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div className="col col-4">
-      <table style={{textAlign: "left"}}>
-        <tbody>
-          <tr style={{border: "none"}}>
-            <td style={{border: "none"}}>
-              <h1>{a.props.title}</h1>
-              <p style={{fontSize:"1.2rem"}}>
-                  {a.props.text}
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>);
-
-  var code_right = (
-  <div className="row"  style={{display:"flex", alignItems:"center"}}>
-    <div className="col">
-      <table style={{textAlign: "left"}}>
-        <tbody>
-          <tr style={{border: "none"}}>
-            <td style={{border: "none"}}>
-              <h1>{a.props.title}</h1>
-              <p style={{fontSize:"1.2rem"}}>
-                  {a.props.text}
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div className="col col-4">
-      <CodeBlock
-      language="js"
-      showLineNumbers>
-        {a.props.code}
-      </CodeBlock>
-    </div>
-  </div>);
-
-  if(a.idx & 1)
-    return code_right;
-
-  return code_left;
+  );
 }
 
 export default function HomepageFeatures(): JSX.Element {
@@ -200,13 +171,13 @@ export default function HomepageFeatures(): JSX.Element {
     <section className={styles.features}>
       <div className="container">
         {FeatureSourceList.map((props, idx) => (
-          <FeatureSource key={idx} idx={idx} props={props} />
+          <FeatureSource key={idx} {...props} />
         ))}
 
-        <div className="row" style={{paddingTop: "40px"}}>
+        <div className="row" style={{ paddingTop: "40px" }}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
-        ))}
+          ))}
         </div>
       </div>
     </section>

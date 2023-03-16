@@ -9,3 +9,15 @@
   height: 200px;
   width: 200px;
 }
+
+.featureWithCode:nth-child(even){
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.featureWithCode:nth-child(odd){
+  display: flex;
+  flex-direction: row-reverse ;
+  align-items: center;
+}

@@ -10,7 +10,8 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const { colorMode } = useColorMode();
 
-  const Svg = require('@site/static/img/waves.svg').default
+  const Logo = require('@site/static/img/logo.svg').default
+  const Waves = require('@site/static/img/waves.svg').default
 
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -22,7 +23,7 @@ function HomepageHeader() {
                 <tr style={{ border: "none" }}>
                   <td style={{ border: "none" }}>
                     <h1>The Argon Language</h1>
-                    <p style={{ fontSize: "1.2rem" }}>
+                    <p style={{ fontSize: "1.1rem" }}>
                       The Argon language is a work-in-progress interpreted multi-paradigm programming language.
                       Its syntax is influenced by many modern languages and aims to be <strong>elegant</strong>, <strong>clean</strong> and <strong>simple to use</strong>.
                     </p>
@@ -39,12 +40,12 @@ function HomepageHeader() {
             </table>
           </div>
           <div className="col">
-            <img src="/img/logo.svg" style={{ height: "350px", width: "350px" }} />
+            <Logo style={{ height: "350px", width: "350px" }}/>
           </div>
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <Svg style={{}} fill={colorMode === "dark" ? "var(--ifm-background-color)" : "currentColor"} />
+        <Waves style={{}} fill={colorMode === "dark" ? "var(--ifm-background-color)" : "currentColor"} />
       </div>
     </header>
   );
