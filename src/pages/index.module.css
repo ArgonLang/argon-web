@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 1rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -13,10 +13,26 @@
   padding-bottom: 0%;
 }
 
+.heroBanner :global(.col) svg {
+  max-width: 60%;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
   }
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+}
+
+.heroText p {
+  font-size: 1.1rem;
 }
 
 .contributingContainer {
@@ -33,11 +49,12 @@
 .buttonContainer {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .buttonRelease {
-  background-color: #ebcb8b;
+  background-color: var(--ifm-btn-primary);
   color: black;
 }
 
