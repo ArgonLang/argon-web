@@ -19,6 +19,17 @@
   }
 }
 
+.contributingContainer {
+  background-image: url(/static/img/end_waves.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 60px;
+  color: var(--ifm-color-secondary);
+}
+
 .buttonContainer {
   display: flex;
   flex-direction: row;

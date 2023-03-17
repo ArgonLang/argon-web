@@ -53,6 +53,17 @@ function HomepageHeader() {
   );
 }
 
+function HomePageContribution() {
+  const Flask = require('@site/static/img/flask.svg').default
+
+  return (
+    <div className={styles.contributingContainer}>
+      <h1><Flask fill="var(--ifm-color-secondary)" /> Contributing</h1>
+      <p>If you find a bug or have an idea, please open an <a href="https://github.com/ArgonLang/Argon/issues" style={{color:"#d08770"}}>issue on GitHub.</a></p>
+    </div>
+  );
+}
+
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
@@ -64,6 +75,7 @@ export default function Home(): JSX.Element {
       <main>
         <HomepageFeatures />
       </main>
+      <HomePageContribution />
     </Layout>
   );
 }
