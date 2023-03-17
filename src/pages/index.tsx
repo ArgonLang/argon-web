@@ -18,7 +18,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <div className="row">
-          <div className={clsx("col", styles.heroText)}>
+          <div className={clsx("col", styles.heroText, styles.heroContent)}>
             <h1>{siteConfig.tagline}</h1>
             <p>
               The Argon language is a work-in-progress interpreted multi-paradigm programming language.
@@ -33,7 +33,7 @@ function HomepageHeader() {
               </a>
             </div>
           </div>
-          <div className="col">
+          <div className={clsx("col", styles.heroContent)}>
             <Logo />
           </div>
         </div>

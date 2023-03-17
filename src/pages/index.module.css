@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  padding: 1rem 0;
+  padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -18,15 +18,19 @@
 }
 
 @media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+  .heroBanner :global(>.container .row) {
+    gap: 2rem;
   }
 }
 
-.heroText {
+.heroContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.heroText {
   align-items: start;
   text-align: left;
 }
