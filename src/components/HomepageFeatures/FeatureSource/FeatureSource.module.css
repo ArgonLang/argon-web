@@ -1,0 +1,12 @@
+.featureWithCode {
+    display: flex;
+    align-items: center;
+}
+
+.featureWithCode:nth-child(even) {
+    flex-direction: row;
+}
+
+.featureWithCode:nth-child(odd) {
+    flex-direction: row-reverse;
+}
