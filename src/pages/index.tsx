@@ -1,9 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import { useColorMode } from '@docusaurus/theme-common';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Layout from '@theme/Layout';
+import clsx from 'clsx';
+import React from 'react';
 
 import styles from './index.module.css';
 
@@ -47,7 +47,7 @@ function HomepageHeader() {
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <Waves style={{}} fill={colorMode === "dark" ? "var(--ifm-background-color)" : "currentColor"} />
+        <Waves fill={colorMode === "dark" ? "var(--ifm-background-color)" : "currentColor"} />
       </div>
     </header>
   );
