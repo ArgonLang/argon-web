@@ -1,6 +1,7 @@
 import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Flask from '@site/static/img/flask.svg';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
@@ -53,16 +54,12 @@ function HomepageHeader() {
   );
 }
 
-function HomePageContribution() {
-  const Flask = require('@site/static/img/flask.svg').default
-
-  return (
-    <div className={styles.contributingContainer}>
-      <h1><Flask fill="var(--ifm-color-secondary)" /> Contributing</h1>
-      <p>If you find a bug or have an idea, please open an <a href="https://github.com/ArgonLang/Argon/issues" style={{color:"#d08770"}}>issue on GitHub.</a></p>
-    </div>
-  );
-}
+const HomePageContribution = () => (
+  <div className={styles.contributingContainer}>
+    <h1><Flask fill="var(--ifm-color-secondary)" /> Contributing</h1>
+    <p>If you find a bug or have an idea, please open an <a href="https://github.com/ArgonLang/Argon/issues">issue on GitHub.</a></p>
+  </div>
+)
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
