@@ -2,6 +2,8 @@ import { useColorMode } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Flask from '@site/static/img/flask.svg';
+import Logo from '@site/static/img/logo.svg';
+import Waves from '@site/static/img/waves.svg';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
@@ -11,9 +13,6 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
-
-  const Logo = require('@site/static/img/logo.svg').default
-  const Waves = require('@site/static/img/waves.svg').default
 
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
