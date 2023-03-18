@@ -1,23 +1,5 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
   width: 100%;
-}
-
-.featureSvg {
-  height: 200px;
-  width: 200px;
-}
-
-.featureWithCode:nth-child(even){
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.featureWithCode:nth-child(odd){
-  display: flex;
-  flex-direction: row-reverse ;
-  align-items: center;
 }
