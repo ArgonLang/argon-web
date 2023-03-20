@@ -1,5 +1,5 @@
 ---
-title: The Basic
+title: The Basics
 sidebar_position: 1
 ---
 
