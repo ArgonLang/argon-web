@@ -5,16 +5,15 @@ sidebar_position: 2
 
 Argon provides a variety of control flow statements. These include C-style **for**, **for-in** and **loop** loops to perform task multiple times, **if** and **switch** statements to execute different branches of code based on certain conditions, and statements like **break** and **continue** to transfer the flow of execution to another point in the code.
 
-## For-In Loops
-You use the **for-in** loop to iterate over a sequence, such as items in an array or set.
+## For-Of Loops
+You use the **for-of** loop to iterate over a sequence, such as items in an array or set.
 
-This example uses a **for-in** loop to iterate over the items in an array:
+This example uses a **for-of** loop to iterate over the items in an array:
 
 ```javascript
 let NOBLE_GAS = ["Helium", "Neon", "Argon", "Krypton", "Xenon"]
 
-var gas
-for gas in NOBLE_GAS {
+for var gas of NOBLE_GAS {
     io.print(gas)
 }
 ```
