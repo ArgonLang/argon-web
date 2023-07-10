@@ -51,7 +51,7 @@ var obj_counters = [
 ]
 
 var itm
-for itm in obj_counters {
+for itm of obj_counters {
   itm.inc_counter()
 }
 
