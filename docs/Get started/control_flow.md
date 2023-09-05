@@ -3,7 +3,7 @@ title: Control flow
 sidebar_position: 2
 ---
 
-Argon provides a variety of control flow statements. These include C-style **for**, **for-in** and **loop** loops to perform task multiple times, **if** and **switch** statements to execute different branches of code based on certain conditions, and statements like **break** and **continue** to transfer the flow of execution to another point in the code.
+Argon provides a variety of control flow statements. These include C-style **for**, **for-of** and **loop** loops to perform task multiple times, **if** and **switch** statements to execute different branches of code based on certain conditions, and statements like **break** and **continue** to transfer the flow of execution to another point in the code.
 
 ## For-Of Loops
 You use the **for-of** loop to iterate over a sequence, such as items in an array or set.

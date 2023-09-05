@@ -199,7 +199,7 @@ For example:
 
 ```javascript
 var letter
-for letter in LETTERS {
+for letter of LETTERS {
     io.print(letter)
 }
 

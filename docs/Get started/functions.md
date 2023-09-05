@@ -105,23 +105,30 @@ variadic(names...)
 ```
 
 ### Function with associative parameters
-It is possible to construct functions with associative parameters (an example is again the function `io.print`), to do this it is sufficient to prepend the symbol `&` to the name of the **last** parameter:
+It is possible to construct functions with associative parameters (an example is again the function `io.print`), to do this you can proceed in two ways:
+
+1) It is possible to create an associative parameter by placing an `=` after the name of the parameter (with this method you can also define the default value associated with the parameter, as in the example below).
+
+2) It is possible to prepend the symbol `&` to the name of the **last** parameter.
 
 ```javascript
-func hello(name, &kwargs) {
+func hello(name, start="", &kwargs) {
     var end = kwargs?.contains("end") ? kwargs["end"] : "!"
 
-    "Hello %s%s" % (name, end) |> io.print
+    "%sHello %s%s" % (start, name, end) |> io.print
 }
 
 hello("Alice") # Output: Hello Alice!
 
-hello("Alice", end="$") # Output: Hello Bob$
+hello("Alice", start="!", end="$") # Output: !Hello Bob$
 ```
+
+> NB: &kwargs is a dictionary that contains all the associative arguments passed as arguments to the called function, while postfix parameters with `=` will contain the value passed as an argument, if any, otherwise the default value.
+
 ### Mixing together
 It is possible to combine the various types of parameter definition together, however it is necessary to respect a precise order: first go the normal parameters (if present), then the parameter that allows transforming the function into a variadic function and finally the associative parameter:
 ```
-[parameters] [...args] [&kwargs]
+[parameters,] [...args,] [param=[default value],] [&kwargs]
 ```
 
 ## Return value
